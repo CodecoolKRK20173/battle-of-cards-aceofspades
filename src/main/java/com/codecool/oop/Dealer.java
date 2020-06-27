@@ -2,12 +2,12 @@ package com.codecool.oop;
 
 import java.util.*;
 
-public class Deck {
+public class Dealer {
 
     List<Card> cards;
 
-    public Deck(List<Card> cards) {
-        this.cards = cards;
+    public Dealer() {
+        this.cards = getCards();
     }
 
     public void shuffle() {
