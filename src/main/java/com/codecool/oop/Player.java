@@ -5,7 +5,7 @@ import java.util.List;
 
 public abstract class Player {
 
-    String name;
+    private final String name;
     private final LinkedList<Card> hand;
 
     public Player(String name) {
