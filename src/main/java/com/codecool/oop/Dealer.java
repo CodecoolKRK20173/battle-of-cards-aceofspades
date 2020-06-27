@@ -7,14 +7,14 @@ public class Dealer {
     List<Card> deck;
 
     public Dealer() {
-        this.cards = getCards();
+        this.deck = getCards();
     }
 
     public void shuffle() {
-        Collections.shuffle(cards);
+        Collections.shuffle(deck);
     }
 
     public List<Card> getCards() {
-        return cards;
+        return deck;
     }
 }
