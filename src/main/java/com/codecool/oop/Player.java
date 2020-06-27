@@ -1,15 +1,14 @@
 package com.codecool.oop;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 public abstract class Player {
 
     String name;
-    private LinkedList<Card> hand;
+    private final LinkedList<Card> hand;
 
-    public Player(String name, List<Card> hand) {
+    public Player(String name) {
         this.name = name;
         this.hand = new LinkedList<>();
     }
@@ -28,8 +27,8 @@ public abstract class Player {
         return hand.removeFirst();
     }
 
-    public void putCardsAtTheBottom(Card... cards) {
-        hand.addAll(Arrays.asList(cards));
+    public void putCardsAtTheBottom(List<Card> cards) {
+        hand.addAll(cards);
     }
 
 }
