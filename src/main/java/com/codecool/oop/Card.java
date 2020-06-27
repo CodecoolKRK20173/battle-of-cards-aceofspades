@@ -1,17 +1,16 @@
 package com.codecool.oop;
 
-public class Card {
+
+import java.util.Objects;
+
+public class Card implements Comparable<Card> {
 
     private final String name;
     private final int attireScore;
     private final int weaponsScore;
     private final int intelligenceScore;
     private final int numberOfKills;
-
-    public static void main(String[] args) {
-        Card card = new Card("Hannibal Lecter", 6, 5, 10, 28);
-        System.out.println(card);
-    }
+    private int categoryToCompare;
 
     public Card(String name, int attire, int weapons, int intelligence, int kills) {
         this.name = name;
@@ -37,8 +36,31 @@ public class Card {
         return intelligenceScore;
     }
 
-    public int getKillsValue() {
+    public int getNumberOfKills() {
         return numberOfKills;
+    }
+
+    public int getCategoryToCompare() {
+        return categoryToCompare;
+    }
+
+    public void setCategoryToCompare(String category) {
+        switch (category) {
+            case "attire":
+                categoryToCompare = attireScore;
+                break;
+            case "weapons":
+                categoryToCompare = weaponsScore;
+                break;
+            case "intelligence":
+                categoryToCompare = intelligenceScore;
+                break;
+            case "kills":
+                categoryToCompare = numberOfKills;
+                break;
+            default:
+                System.out.println("There is no such category");
+        }
     }
 
     @Override
@@ -49,6 +71,32 @@ public class Card {
                 ", weaponsScore=" + weaponsScore +
                 ", intelligenceScore=" + intelligenceScore +
                 ", numberOfKills=" + numberOfKills +
+                ", categoryToCompare=" + categoryToCompare +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Card other) {
+        return this.categoryToCompare - other.categoryToCompare;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Card other = (Card) obj;
+        return this.categoryToCompare == other.categoryToCompare;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(categoryToCompare);
     }
 }
