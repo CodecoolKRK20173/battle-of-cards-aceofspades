@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Dealer {
 
-    List<Card> cards;
+    List<Card> deck;
 
     public Dealer() {
         this.cards = getCards();
