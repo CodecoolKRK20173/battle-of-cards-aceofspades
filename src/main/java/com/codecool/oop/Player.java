@@ -21,7 +21,7 @@ public abstract class Player {
         return hand;
     }
 
-    public abstract int chooseCategory();
+    public abstract Category chooseCategory();
 
     public Card drawNextCard() {
         return hand.removeFirst();

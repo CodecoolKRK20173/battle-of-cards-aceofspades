@@ -11,8 +11,9 @@ public class RealPlayer extends Player {
     }
 
     @Override
-    public int chooseCategory() {
+    public Category chooseCategory() {
         System.out.println("Choose category to compare: 1 - attire, 2 - weapons, 3 - intelligence, 4 - kills");
-        return scan.nextInt();
+        int choice = scan.nextInt();
+        return Category.findByID(choice);
     }
 }

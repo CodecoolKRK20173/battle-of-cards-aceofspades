@@ -7,6 +7,7 @@ public enum Category {
     KILLS(4);
 
     int id;
+    String name;
 
     Category(int id) {
         this.id = id;
@@ -14,6 +15,14 @@ public enum Category {
 
     public int getId() {
         return id;
+    }
+    public static Category findByID(int id) {
+        for (Category value: values()) {
+            if (id == (value.id)) {
+                return value;
+            }
+        }
+        return null;
     }
 }
 

@@ -49,18 +49,18 @@ public class Card implements Comparable<Card> {
         return categoryToCompare;
     }
 
-    public void setCategoryToCompare(int categoryID) {
-        switch (categoryID) {
-            case 1:
+    public void setCategoryToCompare(Category category) {
+        switch (category) {
+            case ATTIRE:
                 categoryToCompare = attireScore;
                 break;
-            case 2:
+            case WEAPONS:
                 categoryToCompare = weaponsScore;
                 break;
-            case 3:
+            case INTELLIGENCE:
                 categoryToCompare = intelligenceScore;
                 break;
-            case 4:
+            case KILLS:
                 categoryToCompare = numberOfKills;
                 break;
             default:
