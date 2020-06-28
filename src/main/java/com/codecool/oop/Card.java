@@ -1,19 +1,20 @@
 package com.codecool.oop;
 
-
 import java.util.Objects;
 
 public class Card implements Comparable<Card> {
 
     private final String name;
+    private final String movie;
     private final int attireScore;
     private final int weaponsScore;
     private final int intelligenceScore;
     private final int numberOfKills;
     private int categoryToCompare;
 
-    public Card(String name, int attire, int weapons, int intelligence, int kills) {
+    public Card(String name, String movie, int attire, int weapons, int intelligence, int kills) {
         this.name = name;
+        this.movie = movie;
         this.attireScore = attire;
         this.weaponsScore = weapons;
         this.intelligenceScore = intelligence;
@@ -22,6 +23,10 @@ public class Card implements Comparable<Card> {
 
     public String getName() {
         return name;
+    }
+
+    public String getMovie() {
+        return movie;
     }
 
     public int getAttireValue() {
@@ -67,17 +72,17 @@ public class Card implements Comparable<Card> {
     public String toString() {
         return "Card{" +
                 "name='" + name + '\'' +
+                ", movie='" + movie + '\'' +
                 ", attireScore=" + attireScore +
                 ", weaponsScore=" + weaponsScore +
                 ", intelligenceScore=" + intelligenceScore +
                 ", numberOfKills=" + numberOfKills +
-                ", categoryToCompare=" + categoryToCompare +
                 '}';
     }
 
     @Override
     public int compareTo(Card other) {
-        return this.categoryToCompare - other.categoryToCompare;
+        return Integer.compare(other.categoryToCompare, this.categoryToCompare);
     }
 
     @Override

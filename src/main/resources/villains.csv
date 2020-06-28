@@ -1,6 +1,6 @@
-name,attire,weapons,intelligence,numberofkills
-Hannibal Lecter,6,5,10,28
-Freddy Krueger,8,7,9,35
-Jason Vorhees,8,7,1,161
-Darth Vader,10,7,9,1944
-Joker,10,6,10,1028
+name,movie,attire,weapons,intelligence,numberofkills
+Hannibal Lecter,Silence of the Lambs,6,5,10,28
+Freddy Krueger,A Nightmare on Elm Street,8,7,9,35
+Jason Vorhees,Friday the 13th,8,7,1,161
+Darth Vader,Star Wars,10,7,9,1944
+Joker,The Dark Knight,10,6,10,1028
