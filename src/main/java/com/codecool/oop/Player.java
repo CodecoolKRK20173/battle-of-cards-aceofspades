@@ -31,4 +31,11 @@ public abstract class Player {
         hand.addAll(cards);
     }
 
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
 }
