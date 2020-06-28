@@ -11,6 +11,7 @@ public class Card implements Comparable<Card> {
     private final int intelligenceScore;
     private final int numberOfKills;
     private int categoryToCompare;
+    private RealPlayer playerOwner;
 
     public Card(String name, String movie, int attire, int weapons, int intelligence, int kills) {
         this.name = name;

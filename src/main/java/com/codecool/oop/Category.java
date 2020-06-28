@@ -7,7 +7,6 @@ public enum Category {
     KILLS(4);
 
     int id;
-    String name;
 
     Category(int id) {
         this.id = id;
