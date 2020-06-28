@@ -1,13 +1,10 @@
 package com.codecool.oop;
 
-/**
- * Hello world!
- *
- */
-public class Main 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class Main {
+    public static void main(String[] args) {
+        Setup setup = new Setup();
+        Dealer dealer = new Dealer();
+        Table table = new Table(setup.getPlayers(), dealer);
+        System.out.println(table.getPlayers().toString());
     }
 }
