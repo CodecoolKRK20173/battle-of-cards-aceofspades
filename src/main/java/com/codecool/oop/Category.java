@@ -17,9 +17,9 @@ public enum Category {
         return id;
     }
     public static Category findByID(int id) {
-        for (Category value: values()) {
-            if (id == (value.id)) {
-                return value;
+        for (Category category: values()) {
+            if (id == (category.id)) {
+                return category;
             }
         }
         return null;
