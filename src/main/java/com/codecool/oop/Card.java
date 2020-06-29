@@ -83,7 +83,7 @@ public class Card implements Comparable<Card> {
 
     @Override
     public int compareTo(Card other) {
-        return Integer.compare(other.categoryToCompare, this.categoryToCompare);
+        return Integer.compare(this.categoryToCompare, other.categoryToCompare);
     }
 
     @Override
