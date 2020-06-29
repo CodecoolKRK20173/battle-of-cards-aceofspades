@@ -24,9 +24,9 @@ public class CSVCardsDAO implements CardsDAO<Card> {
         List<String> cardLines = Files.lines(Paths.get(absolutePath)).collect(Collectors.toList());
 
         for(int i = 1; i < cardLines.size(); i++){
-            String[] tempList = cardLines.get(i).split(",");
+            String[] cardData = cardLines.get(i).split(",");
 
-            add(new Card(tempList[0], tempList[1], Integer.parseInt(tempList[2]), Integer.parseInt(tempList[3]), Integer.parseInt(tempList[4]), Integer.parseInt(tempList[5])));
+            add(new Card(cardData[0], cardData[1], Integer.parseInt(cardData[2]), Integer.parseInt(cardData[3]), Integer.parseInt(cardData[4]), Integer.parseInt(cardData[5])));
         }
     }
 
