@@ -8,8 +8,8 @@ public class Main {
         Setup setup = new Setup();
         Dealer dealer = new Dealer();
         Table table = new Table(setup.getPlayers(), dealer);
-        CSVCardDAO csvcardDAO = new CSVCardDAO();
-        System.out.println(csvcardDAO.getAll());
+        CSVCardsDAO csvcardsDAO = new CSVCardsDAO();
+        System.out.println(csvcardsDAO.getAll());
         System.out.println(table.getPlayers().toString());
 
     }

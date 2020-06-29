@@ -2,7 +2,7 @@ package com.codecool.oop;
 
 import java.util.List;
 
-public interface CardDAO<T> {
+public interface CardsDAO<T> {
 
     List<T> getAll();
 

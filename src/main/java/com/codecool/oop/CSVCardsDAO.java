@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CSVCardDAO implements CardDAO<Card> {
+public class CSVCardsDAO implements CardsDAO<Card> {
 
     private List<Card> cards = new ArrayList<>();
     private String content;
 
-    public CSVCardDAO() throws IOException, URISyntaxException {
+    public CSVCardsDAO() throws IOException, URISyntaxException {
 
         URL res = getClass().getClassLoader().getResource("villains.csv");
         File file = Paths.get(res.toURI()).toFile();
