@@ -6,8 +6,8 @@ public class Dealer {
 
     private final List<Card> deck;
 
-    public Dealer() {
-        this.deck = getDeck();
+    public Dealer(List<Card> deck) {
+        this.deck = deck;
     }
 
     public void shuffle() {
