@@ -26,6 +26,8 @@ public class Card implements Comparable<Card> {
         return name;
     }
 
+    public String getPlayerOwner() {return playerOwner;}
+
     public String getMovie() {
         return movie;
     }

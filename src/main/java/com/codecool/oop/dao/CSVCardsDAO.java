@@ -1,4 +1,7 @@
-package com.codecool.oop;
+package com.codecool.oop.dao;
+
+import com.codecool.oop.Card;
+import com.codecool.oop.dao.CardsDAO;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,7 +9,6 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;

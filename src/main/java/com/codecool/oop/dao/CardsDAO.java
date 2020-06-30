@@ -1,4 +1,4 @@
-package com.codecool.oop;
+package com.codecool.oop.dao;
 
 import java.util.List;
 
