@@ -1,4 +1,9 @@
-package com.codecool.oop;
+package com.codecool.oop.controllers;
+
+import com.codecool.oop.Card;
+import com.codecool.oop.Category;
+import com.codecool.oop.Dealer;
+import com.codecool.oop.RealPlayer;
 
 import java.util.ArrayList;
 import java.util.List;
