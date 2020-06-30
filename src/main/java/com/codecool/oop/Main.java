@@ -12,7 +12,7 @@ public class Main {
         Table table = new Table(players, dealer);
         dealer.shuffle();
         dealer.dealCards(players);
-        System.out.println(players.get(0).getHand());
+        System.out.println(players.get(0).getCards());
 
 
 //        System.out.println(dealer.getDeck());

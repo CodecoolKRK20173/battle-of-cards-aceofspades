@@ -1,6 +1,5 @@
 package com.codecool.oop;
 
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class RealPlayer extends Player {
@@ -19,7 +18,7 @@ public class RealPlayer extends Player {
 
     @Override
     public Card drawNextCard() {
-        return getHand().removeFirst();
+        return getCards().removeFirst();
     }
 
 }

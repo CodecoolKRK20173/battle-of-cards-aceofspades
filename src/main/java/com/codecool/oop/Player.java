@@ -22,7 +22,7 @@ public abstract class Player {
         return name;
     }
 
-    public LinkedList<Card> getHand() {
+    public LinkedList<Card> getCards() {
         return cards;
     }
 
@@ -40,7 +40,7 @@ public abstract class Player {
     public String toString() {
         return "Player{" +
                 "name='" + name + '\'' +
-                ", hand=" + cards +
+                ", cards=" + cards +
                 '}';
     }
 }

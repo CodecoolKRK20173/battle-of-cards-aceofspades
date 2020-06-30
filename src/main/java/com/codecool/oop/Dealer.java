@@ -9,15 +9,11 @@ public class Dealer extends Player {
     }
 
     public void shuffle() {
-        Collections.shuffle(getHand());
-    }
-
-    public List<Card> getDeck() {
-        return getHand();
+        Collections.shuffle(getCards());
     }
 
     public void dealCards(List<RealPlayer> players) {
-        int iterations = getHand().size() / players.size();
+        int iterations = getCards().size() / players.size();
         for (int i = 0; i < iterations; i++) {
             for (RealPlayer player : players) {
                 Card drawnCard = this.drawNextCard();
@@ -29,6 +25,6 @@ public class Dealer extends Player {
 
     @Override
     public Card drawNextCard() {
-        return getHand().removeFirst();
+        return getCards().removeFirst();
     }
 }
