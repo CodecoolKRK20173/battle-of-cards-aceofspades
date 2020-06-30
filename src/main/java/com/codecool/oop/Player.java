@@ -31,7 +31,7 @@ public class Player {
     }
 
     public Card drawNextCard() {
-        return getCards().removeFirst();
+        return cards.removeFirst();
 
     }
 
