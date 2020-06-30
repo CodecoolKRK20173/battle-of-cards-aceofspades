@@ -16,15 +16,10 @@ public class Dealer extends Player {
         int iterations = getCards().size() / players.size();
         for (int i = 0; i < iterations; i++) {
             for (RealPlayer player : players) {
-                Card drawnCard = this.drawNextCard();
+                Card drawnCard = drawNextCard();
                 player.addCard(drawnCard);
                 drawnCard.setPlayerOwner(player.getName());
             }
         }
-    }
-
-    @Override
-    public Card drawNextCard() {
-        return getCards().removeFirst();
     }
 }

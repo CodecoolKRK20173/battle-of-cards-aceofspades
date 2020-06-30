@@ -15,10 +15,4 @@ public class RealPlayer extends Player {
         int choice = scan.nextInt();
         return Category.findByID(choice);
     }
-
-    @Override
-    public Card drawNextCard() {
-        return getCards().removeFirst();
-    }
-
 }

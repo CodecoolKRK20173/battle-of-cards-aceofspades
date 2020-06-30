@@ -3,7 +3,7 @@ package com.codecool.oop;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class Player {
+public class Player {
 
     private final String name;
     private final LinkedList<Card> cards;
@@ -30,7 +30,10 @@ public abstract class Player {
         cards.add(card);
     }
 
-    public abstract Card drawNextCard();
+    public Card drawNextCard() {
+        return getCards().removeFirst();
+
+    }
 
     public void putCardsAtTheBottom(List<Card> cards) {
         this.cards.addAll(cards);
