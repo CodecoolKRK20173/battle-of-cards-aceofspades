@@ -11,7 +11,7 @@ public class Card implements Comparable<Card> {
     private final int intelligenceScore;
     private final int numberOfKills;
     private int categoryToCompare;
-    private RealPlayer playerOwner;
+    private String playerOwner;
 
     public Card(String name, String movie, int attire, int weapons, int intelligence, int kills) {
         this.name = name;
@@ -69,6 +69,10 @@ public class Card implements Comparable<Card> {
         }
     }
 
+    public void setPlayerOwner(String playerOwner) {
+        this.playerOwner = playerOwner;
+    }
+
     @Override
     public String toString() {
         return "Card{" +
@@ -78,6 +82,7 @@ public class Card implements Comparable<Card> {
                 ", weaponsScore=" + weaponsScore +
                 ", intelligenceScore=" + intelligenceScore +
                 ", numberOfKills=" + numberOfKills +
+                ", playerOwner='" + playerOwner + '\'' +
                 '}';
     }
 

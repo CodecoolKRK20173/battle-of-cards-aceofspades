@@ -21,11 +21,11 @@ public abstract class Player {
         return hand;
     }
 
-    public abstract Category chooseCategory();
-
-    public Card drawNextCard() {
-        return hand.removeFirst();
+    public void addCard(Card card) {
+        hand.add(card);
     }
+
+    public abstract Card drawNextCard();
 
     public void putCardsAtTheBottom(List<Card> cards) {
         hand.addAll(cards);
@@ -35,7 +35,7 @@ public abstract class Player {
     public String toString() {
         return "Player{" +
                 "name='" + name + '\'' +
+                ", hand=" + hand +
                 '}';
     }
-
 }

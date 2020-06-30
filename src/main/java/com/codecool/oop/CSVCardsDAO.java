@@ -7,12 +7,13 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class CSVCardsDAO implements CardsDAO<Card> {
 
-    private List<Card> cards = new ArrayList<>();
+    private LinkedList<Card> cards = new LinkedList<>();
     private String content;
 
     public CSVCardsDAO() throws IOException, URISyntaxException {
@@ -31,7 +32,7 @@ public class CSVCardsDAO implements CardsDAO<Card> {
     }
 
     @Override
-    public List<Card> getAll() {
+    public LinkedList<Card> getAll() {
         return cards;
     }
 
