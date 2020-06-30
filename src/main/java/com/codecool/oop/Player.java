@@ -6,36 +6,36 @@ import java.util.List;
 public abstract class Player {
 
     private final String name;
-    private final LinkedList<Card> hand;
+    private final LinkedList<Card> cards;
 
     public Player(String name) {
         this.name = name;
-        this.hand = new LinkedList<>();
+        this.cards = new LinkedList<>();
     }
 
     public String getName() {
         return name;
     }
 
-    public List<Card> getHand() {
-        return hand;
+    public LinkedList<Card> getHand() {
+        return cards;
     }
 
     public void addCard(Card card) {
-        hand.add(card);
+        cards.add(card);
     }
 
     public abstract Card drawNextCard();
 
     public void putCardsAtTheBottom(List<Card> cards) {
-        hand.addAll(cards);
+        cards.addAll(cards);
     }
 
     @Override
     public String toString() {
         return "Player{" +
                 "name='" + name + '\'' +
-                ", hand=" + hand +
+                ", hand=" + cards +
                 '}';
     }
 }

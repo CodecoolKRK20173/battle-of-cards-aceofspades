@@ -1,17 +1,14 @@
 package com.codecool.oop;
 
-import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 public class RealPlayer extends Player {
 
     Scanner scan = new Scanner(System.in);
-    private final LinkedList<Card> hand;
 
     public RealPlayer(String name) {
         super(name);
-        this.hand = new LinkedList<>();
     }
 
     public Category chooseCategory() {
@@ -22,8 +19,7 @@ public class RealPlayer extends Player {
 
     @Override
     public Card drawNextCard() {
-        return hand.removeFirst();
+        return super.getHand().removeFirst();
     }
-
 
 }
