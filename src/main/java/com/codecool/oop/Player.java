@@ -28,7 +28,7 @@ public abstract class Player {
     public abstract Card drawNextCard();
 
     public void putCardsAtTheBottom(List<Card> cards) {
-        cards.addAll(cards);
+        this.cards.addAll(cards);
     }
 
     @Override
