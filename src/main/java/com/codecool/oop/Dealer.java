@@ -4,23 +4,20 @@ import java.util.*;
 
 public class Dealer extends Player {
 
-    private final LinkedList<Card> cards;
-
-    public Dealer(String name, LinkedList<Card> cards) {
-        super(name);
-        this.cards = cards;
+    public Dealer(LinkedList<Card> cards) {
+        super(cards);
     }
 
     public void shuffle() {
-        Collections.shuffle(cards);
+        Collections.shuffle(getHand());
     }
 
     public List<Card> getDeck() {
-        return cards;
+        return getHand();
     }
 
     public void dealCards(List<RealPlayer> players) {
-        int iterations = cards.size() / players.size();
+        int iterations = getHand().size() / players.size();
         for (int i = 0; i < iterations; i++) {
             for (RealPlayer player : players) {
                 Card drawnCard = this.drawNextCard();
@@ -32,6 +29,6 @@ public class Dealer extends Player {
 
     @Override
     public Card drawNextCard() {
-        return cards.removeFirst();
+        return getHand().removeFirst();
     }
 }

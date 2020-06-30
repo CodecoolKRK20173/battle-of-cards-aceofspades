@@ -19,7 +19,7 @@ public class RealPlayer extends Player {
 
     @Override
     public Card drawNextCard() {
-        return super.getHand().removeFirst();
+        return getHand().removeFirst();
     }
 
 }

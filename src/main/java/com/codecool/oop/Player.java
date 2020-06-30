@@ -13,6 +13,11 @@ public abstract class Player {
         this.cards = new LinkedList<>();
     }
 
+    public Player(LinkedList<Card> cards) {
+        this.name = "Dealer";
+        this.cards = cards;
+    }
+
     public String getName() {
         return name;
     }

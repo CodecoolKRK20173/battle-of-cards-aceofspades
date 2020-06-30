@@ -7,7 +7,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException, URISyntaxException{
         CSVCardsDAO csvcardsDAO = new CSVCardsDAO();
-        Dealer dealer = new Dealer("Dealer", csvcardsDAO.getAll());
+        Dealer dealer = new Dealer(csvcardsDAO.getAll());
         List<RealPlayer> players = new Setup().getPlayers();
         Table table = new Table(players, dealer);
         dealer.shuffle();
