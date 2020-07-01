@@ -21,7 +21,7 @@ public class Dealer extends Player {
             for (RealPlayer player : players) {
                 Card drawnCard = drawNextCard();
                 player.addCard(drawnCard);
-                drawnCard.setPlayerOwner(player.getName());
+                drawnCard.setPlayerOwner(player.name);
             }
         }
     }

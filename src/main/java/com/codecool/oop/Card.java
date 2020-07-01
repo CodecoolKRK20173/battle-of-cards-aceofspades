@@ -6,65 +6,37 @@ public class Card implements Comparable<Card> {
 
     private final String name;
     private final String movie;
-    private final int attireScore;
-    private final int weaponsScore;
-    private final int intelligenceScore;
-    private final int numberOfKills;
+    private final int attire;
+    private final int weapons;
+    private final int intelligence;
+    private final int kills;
     private int categoryToCompare;
     private String playerOwner;
 
     public Card(String name, String movie, int attire, int weapons, int intelligence, int kills) {
         this.name = name;
         this.movie = movie;
-        this.attireScore = attire;
-        this.weaponsScore = weapons;
-        this.intelligenceScore = intelligence;
-        this.numberOfKills = kills;
-    }
-
-    public String getName() {
-        return name;
+        this.attire = attire;
+        this.weapons = weapons;
+        this.intelligence = intelligence;
+        this.kills = kills;
     }
 
     public String getPlayerOwner() {return playerOwner;}
 
-    public String getMovie() {
-        return movie;
-    }
-
-    public int getAttireValue() {
-        return attireScore;
-    }
-
-    public int getWeaponsValue() {
-        return weaponsScore;
-    }
-
-    public int getIntelligenceValue() {
-        return intelligenceScore;
-    }
-
-    public int getNumberOfKills() {
-        return numberOfKills;
-    }
-
-    public int getCategoryToCompare() {
-        return categoryToCompare;
-    }
-
     public void setCategoryToCompare(Category category) {
         switch (category) {
             case ATTIRE:
-                categoryToCompare = attireScore;
+                categoryToCompare = attire;
                 break;
             case WEAPONS:
-                categoryToCompare = weaponsScore;
+                categoryToCompare = weapons;
                 break;
             case INTELLIGENCE:
-                categoryToCompare = intelligenceScore;
+                categoryToCompare = intelligence;
                 break;
             case KILLS:
-                categoryToCompare = numberOfKills;
+                categoryToCompare = kills;
                 break;
             default:
                 System.out.println("There is no such category");
@@ -80,11 +52,10 @@ public class Card implements Comparable<Card> {
         return "Card{" +
                 "name='" + name + '\'' +
                 ", movie='" + movie + '\'' +
-                ", attireScore=" + attireScore +
-                ", weaponsScore=" + weaponsScore +
-                ", intelligenceScore=" + intelligenceScore +
-                ", numberOfKills=" + numberOfKills +
-                ", playerOwner='" + playerOwner + '\'' +
+                ", attire=" + attire +
+                ", weapons=" + weapons +
+                ", intelligence=" + intelligence +
+                ", kills=" + kills +
                 '}';
     }
 
