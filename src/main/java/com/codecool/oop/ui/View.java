@@ -1,6 +1,6 @@
 package com.codecool.oop.ui;
-import com.codecool.oop.Card;
-import com.codecool.oop.RealPlayer;
+import com.codecool.oop.table.Card;
+import com.codecool.oop.table.RealPlayer;
 
 import java.util.List;
 
@@ -56,6 +56,14 @@ public class View extends AbstractView {
         for (RealPlayer player : players) {
             System.out.printf("%s: %d cards left\n", player.getName(), player.getCards().size());
         }
+    }
+
+    public void printMessage(String message) {
+        System.out.print(message);
+    }
+
+    public void printMessage(String message, int var) {
+        System.out.printf(message, var);
     }
 
 }
