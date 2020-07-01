@@ -12,10 +12,6 @@ public enum Category {
         this.id = id;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public static Category findByID(int id) {
         for (Category category : values()) {
             if (id == category.id) {
