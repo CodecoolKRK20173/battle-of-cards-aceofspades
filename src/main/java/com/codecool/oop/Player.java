@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Player {
 
-    private final String name;
-    private final LinkedList<Card> cards;
+    protected final String name;
+    protected final LinkedList<Card> cards;
 
     public Player(String name) {
         this.name = name;

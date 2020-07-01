@@ -15,9 +15,10 @@ public enum Category {
     public int getId() {
         return id;
     }
+
     public static Category findByID(int id) {
-        for (Category category: values()) {
-            if (id == (category.id)) {
+        for (Category category : values()) {
+            if (id == category.id) {
                 return category;
             }
         }
