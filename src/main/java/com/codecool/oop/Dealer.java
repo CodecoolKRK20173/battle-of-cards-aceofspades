@@ -4,16 +4,19 @@ import java.util.*;
 
 public class Dealer extends Player {
 
+    int deckSize;
+
     public Dealer(LinkedList<Card> cards) {
         super(cards);
+        deckSize = cards.size();
     }
 
     public void shuffle() {
-        Collections.shuffle(getCards());
+        Collections.shuffle(cards);
     }
 
     public void dealCards(List<RealPlayer> players) {
-        int iterations = getCards().size() / players.size();
+        int iterations = cards.size() / players.size();
         for (int i = 0; i < iterations; i++) {
             for (RealPlayer player : players) {
                 Card drawnCard = drawNextCard();
@@ -21,5 +24,9 @@ public class Dealer extends Player {
                 drawnCard.setPlayerOwner(player.getName());
             }
         }
+    }
+
+    public int getActualDeckSize() {
+        return deckSize - cards.size();
     }
 }
