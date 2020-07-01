@@ -51,7 +51,6 @@ public class GameController {
                                                                   table.getCardsThatTie(winningCard));
                 System.out.println("Cards stay on the table.");
                 table.getPot().addAll(table.getShowdown());
-                table.getPot().sort(Collections.reverseOrder());
                 table.getShowdown().clear();
                 view.printStatistics(players, table.getPot(), roundNumber);
             } else {
@@ -60,7 +59,6 @@ public class GameController {
                 System.out.printf("%s beats %s in %s.\n", winningCard.getName(),
                                                           table.getOtherCardsNames(winningCard),
                                                           category.toString().toLowerCase());
-                table.getShowdown().sort(Collections.reverseOrder());
                 winningPlayer.putCardsAtTheBottom(table.getShowdown());
                 winningPlayer.putCardsAtTheBottom(table.getPot());
                 table.setNewPlayerOwner(winningPlayer.getName());
