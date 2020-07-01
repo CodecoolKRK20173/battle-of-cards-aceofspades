@@ -1,5 +1,8 @@
 package com.codecool.oop.ui;
 import com.codecool.oop.Card;
+import com.codecool.oop.RealPlayer;
+
+import java.util.List;
 
 public class View extends AbstractView {
 
@@ -48,5 +51,11 @@ public class View extends AbstractView {
         System.out.println("\n" + " " + "-".repeat(WIDTH) + " " + " " + " " + "-".repeat(WIDTH) + " ");
     }
 
+    public void printStatistics(List<RealPlayer> players, int roundNumber) {
+        System.out.printf("Game status after round %d:\n", roundNumber);
+        for (RealPlayer player : players) {
+            System.out.printf("%s: %d cards left\n", player.getName(), player.getCards().size());
+        }
+    }
 
 }
