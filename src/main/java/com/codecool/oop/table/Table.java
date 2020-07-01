@@ -70,6 +70,9 @@ public class Table {
         for (Card card : showdown) {
             card.setPlayerOwner(name);
         }
+        for (Card card : pot) {
+            card.setPlayerOwner(name);
+        }
     }
 
     public boolean checkForTie(Card winningCard) {
