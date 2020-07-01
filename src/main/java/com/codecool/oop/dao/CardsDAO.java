@@ -1,10 +1,11 @@
 package com.codecool.oop.dao;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public interface CardsDAO<T> {
 
-    List<T> getAll();
+    LinkedList<T> getAll();
 
     void add(T t);
 
