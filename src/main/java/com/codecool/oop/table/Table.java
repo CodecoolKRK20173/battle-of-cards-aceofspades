@@ -90,4 +90,14 @@ public class Table {
         }
         return sb.toString().replaceAll(", $", "");
     }
+
+    public String getCardsThatTie(Card winningCard) {
+        StringBuilder sb = new StringBuilder();
+        for (Card card : showdown) {
+            if (card != winningCard && card.equals(winningCard)) {
+                sb.append(card.getName()).append(", ");
+            }
+        }
+        return sb.toString().replaceAll(", $", "");
+    }
 }

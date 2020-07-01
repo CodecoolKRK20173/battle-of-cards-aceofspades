@@ -1,19 +1,12 @@
 package com.codecool.oop.controllers;
 
-import com.codecool.oop.Dealer;
-import com.codecool.oop.RealPlayer;
-import com.codecool.oop.Setup;
-import com.codecool.oop.dao.CSVCardsDAO;
-import com.codecool.oop.dao.CardsDAO;
 import com.codecool.oop.ui.View;
-import com.codecool.oop.Card;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.List;
 import java.util.Scanner;
 
-public class ViewController {
+public class MenuController {
 
     private static View view = new View();
     private static Scanner scan = new Scanner(System.in);
@@ -42,13 +35,8 @@ public class ViewController {
 
             if (userInput == 1) {
                 view.clearScreen();
-                List<RealPlayer> players = new Setup().getPlayers();
-                CardsDAO<Card> cardsDAO = new CSVCardsDAO();
-                Dealer dealer = new Dealer(cardsDAO.getAll());
-                Table table = new Table(players, dealer);
-                dealer.shuffle();
-                dealer.dealCards(players);
-                table.playRound(players);
+                GameController game = new GameController();
+                game.run();
 
             } else if (userInput == 2) {
                 printRules();

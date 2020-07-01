@@ -1,4 +1,7 @@
-package com.codecool.oop;
+package com.codecool.oop.controllers;
+
+import com.codecool.oop.table.RealPlayer;
+import com.codecool.oop.ui.*;
 
 import java.util.ArrayList;
 import java.util.List;

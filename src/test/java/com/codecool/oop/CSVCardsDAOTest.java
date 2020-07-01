@@ -1,5 +1,6 @@
 package com.codecool.oop;
 
+import com.codecool.oop.table.Card;
 import junit.framework.TestCase;
 import org.junit.Test;
 

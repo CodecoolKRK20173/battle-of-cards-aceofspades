@@ -1,4 +1,4 @@
-package com.codecool.oop;
+package com.codecool.oop.table;
 
 import java.util.Scanner;
 

@@ -1,5 +1,5 @@
 package com.codecool.oop.ui;
-import com.codecool.oop.Card;
+import com.codecool.oop.table.Card;
 
 public abstract class AbstractView {
 

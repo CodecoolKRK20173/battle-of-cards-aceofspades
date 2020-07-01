@@ -1,4 +1,4 @@
-package com.codecool.oop;
+package com.codecool.oop.table;
 
 import java.util.Objects;
 
@@ -20,6 +20,10 @@ public class Card implements Comparable<Card> {
         this.weapons = weapons;
         this.intelligence = intelligence;
         this.kills = kills;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getPlayerOwner() {return playerOwner;}

@@ -51,11 +51,12 @@ public class View extends AbstractView {
         System.out.println("\n" + " " + "-".repeat(WIDTH) + " " + " " + " " + "-".repeat(WIDTH) + " ");
     }
 
-    public void printStatistics(List<RealPlayer> players, int roundNumber) {
+    public void printStatistics(List<RealPlayer> players, List<Card> pot, int roundNumber) {
         System.out.printf("Game status after round %d:\n", roundNumber);
         for (RealPlayer player : players) {
-            System.out.printf("%s: %d cards left\n", player.getName(), player.getCards().size());
+            System.out.printf("%s: %d cards\n", player.getName(), player.getCards().size());
         }
+        System.out.printf("pot: %d cards\n", pot.size());
     }
 
     public void printMessage(String message) {

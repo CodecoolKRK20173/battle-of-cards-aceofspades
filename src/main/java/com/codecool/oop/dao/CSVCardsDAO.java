@@ -1,7 +1,6 @@
 package com.codecool.oop.dao;
 
-import com.codecool.oop.Card;
-import com.codecool.oop.dao.CardsDAO;
+import com.codecool.oop.table.Card;
 
 import java.io.File;
 import java.io.IOException;

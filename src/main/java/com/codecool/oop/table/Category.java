@@ -1,4 +1,4 @@
-package com.codecool.oop;
+package com.codecool.oop.table;
 
 public enum Category {
     ATTIRE(1),
