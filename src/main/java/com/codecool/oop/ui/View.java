@@ -56,7 +56,7 @@ public class View extends AbstractView {
         for (RealPlayer player : players) {
             System.out.printf("%s: %d cards\n", player.getName(), player.getCards().size());
         }
-        System.out.printf("pot: %d cards\n", pot.size());
+        System.out.printf("Pot: %d cards\n", pot.size());
     }
 
     public void printMessage(String message) {

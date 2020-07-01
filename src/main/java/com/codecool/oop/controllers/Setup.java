@@ -16,8 +16,9 @@ public class Setup {
         View view = new View();
         players = new ArrayList<>();
         view.printMessage("Enter number of players: ");
-        String numberOfPlayers = scan.nextLine();
-        for (int i = 0; i < Integer.parseInt(numberOfPlayers); i++) {
+        int numberOfPlayers = scan.nextInt();
+        scan.nextLine();
+        for (int i = 0; i < numberOfPlayers; i++) {
             view.printMessage("Player %d, enter your name: ", (i + 1));
             String name = scan.nextLine();
             players.add(new RealPlayer(name));
