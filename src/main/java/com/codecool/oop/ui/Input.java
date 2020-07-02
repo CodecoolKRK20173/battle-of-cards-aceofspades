@@ -42,7 +42,10 @@ public class Input {
     }
 
     public int getCategory() {
-        int number = getIntegerInput("Choose category to compare: \n1 - attire, \n2 - weapons, \n3 - intelligence, \n4 - kills");
-        return number;
+        return getIntegerInput("Choose category to compare: 1 - attire, 2 - weapons, 3 - intelligence, 4 - kills");
+    }
+
+    public int getNumberOfPlayers() {
+        return getIntegerInput("Enter number of players");
     }
 }
