@@ -10,19 +10,19 @@ public class Input {
     }
 
     private int getIntegerInput(String info) {
-        int input = 0;
-        view.print(info);
-        view.emptySpace();
+        int input;
         Scanner scannerFromUser = new Scanner(System.in);
 
-        while(!scannerFromUser.hasNextInt()){
-            view.print("Wrong, please provide correct number");
-            scannerFromUser.next();
-        }
-        input = scannerFromUser.nextInt();
+        do {
+            view.print(info);
+            while(!scannerFromUser.hasNextInt()){
+                scannerFromUser.next();
+            }
+            input = scannerFromUser.nextInt();
+        } while (input < 1 || input > 4);
+
         return input;
     }
-
 
     private String getStringInput(String info) {
         view.print(info);
@@ -46,6 +46,6 @@ public class Input {
     }
 
     public int getNumberOfPlayers() {
-        return getIntegerInput("Enter number of players");
+        return getIntegerInput("Enter number of players (min = 1, max = 4)");
     }
 }
