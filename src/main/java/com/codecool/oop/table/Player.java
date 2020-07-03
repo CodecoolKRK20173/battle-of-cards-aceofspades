@@ -3,7 +3,7 @@ package com.codecool.oop.table;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Player {
+public abstract class Player {
 
     protected final String name;
     protected final LinkedList<Card> cards;
