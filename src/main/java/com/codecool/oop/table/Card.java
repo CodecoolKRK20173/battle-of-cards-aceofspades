@@ -53,14 +53,12 @@ public class Card implements Comparable<Card> {
 
     @Override
     public String toString() {
-        return "Card{" +
-                "name='" + name + '\'' +
-                ", movie='" + movie + '\'' +
-                ", attire=" + attire +
-                ", weapons=" + weapons +
-                ", intelligence=" + intelligence +
-                ", kills=" + kills +
-                '}';
+        return  "    name: " + name + '\n' + '\n' +
+                "    movie: " + movie + '\n' + '\n' +
+                "1 | attire: " + attire + '\n' +
+                "2 | weapons: " + weapons + '\n' +
+                "3 | intelligence: " + intelligence + '\n' +
+                "4 | kills: " + kills + '\n';
     }
 
     @Override

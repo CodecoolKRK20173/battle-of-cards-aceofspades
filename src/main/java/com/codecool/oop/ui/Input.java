@@ -41,6 +41,7 @@ public class Input {
         return name;
     }
 
+
     public int getCategory() {
         return getIntegerInput("Choose category to compare: 1 - attire, 2 - weapons, 3 - intelligence, 4 - kills");
     }

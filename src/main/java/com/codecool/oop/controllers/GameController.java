@@ -38,7 +38,7 @@ public class GameController {
             scan.nextLine();
             System.out.print("Your card is: ");
             Card drawnCard = startingPlayer.drawNextCard();
-            System.out.println(drawnCard);
+            view.print(drawnCard);
             table.getShowdown().add(drawnCard);
             table.takeCardsFromOtherPlayers(startingPlayer);
             Category category = startingPlayer.chooseCategory();
@@ -70,8 +70,8 @@ public class GameController {
             }
         }
 
-        System.out.println(startingPlayer.getName() + " wins the game");
-        System.out.println("Press enter to go back to main menu");
-        scan.nextLine();
+        //System.out.println(startingPlayer.getName() + " wins the game");
+        view.print(startingPlayer.getName() + " wins the game");
+        view.keyPressed(View.GREEN + "Press enter to go back to main menu" + View.RESET);
     }
 }

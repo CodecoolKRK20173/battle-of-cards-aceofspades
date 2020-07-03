@@ -3,36 +3,92 @@ import com.codecool.oop.table.Card;
 import com.codecool.oop.table.RealPlayer;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.Scanner;
 
 public class View extends AbstractView {
 
-    private final int WIDTH = 30;
+    public static final String RESET = "\u001B[0m";
+    public static final String BLACK = "\u001B[30m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String PURPLE = "\u001B[35m";
+    public static final String CYAN = "\u001B[36m";
+    public static final String WHITE = "\u001B[37m";
+
+    private final int WIDTH = 40;
 
     public void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
+    public void keyPressed(String text) {
+        System.out.println(GREEN + text + RESET);
+        Scanner scannerFromUser = new Scanner(System.in);
+        String input = scannerFromUser.nextLine();
+    }
+
     public void emptySpace() {
         System.out.print(" ");
     }
 
+    public void pause(int seconds) {
+        try {
+            TimeUnit.SECONDS.sleep(seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void printStart() {
+        System.out.println(RED + "Welcome in BATTLE OF CARDS \n  MOVIE VILLAINS EDITION\n" + RESET);
+        pause(2);
+        System.out.println(RED + "      powered by \n Codecool: Ace of spades\n" + RESET);
+        pause(2);
+        keyPressed("Press any key to continue...");
+    }
+
+    public void printMenu() {
+        String[] options = {" New game", " Help", " Exit"};
+        System.out.println(RED + "------------------" + RESET);
+        System.out.println(RED + "    MAIN MENU" + RESET);
+        System.out.println(RED + "------------------" + RESET);
+        for(int index = 0; index < options.length; index++){
+            System.out.println(GREEN + "   " + (index + 1) + ". " + options[index] + RESET);
+        }
+        System.out.println(RED + "------------------" + RESET);
+        System.out.print(GREEN + "Choose one of the options: " + RESET);
+    }
+
+    public void printRules() {
+        System.out.println(BLUE + "\nSome rules\n" + RESET);
+    }
+
+    public void printInfo(String message){
+        System.out.println(RED + message + RESET);
+    }
+
     @Override
     public void print(String info) {
-        System.out.println("\n" + info);
+        System.out.println(GREEN + "\n" + info + "\n" + RESET);
     }
 
     @Override
     public void print(Card card) {
         String[] lines = card.toString().split("\n");
 
-        System.out.println("\n" + " " + "-".repeat(WIDTH) + "-");
-        System.out.println("\n" + "|" + " ".repeat(WIDTH) + "|");
+        System.out.println(RED + "\n" + " " + "-".repeat(WIDTH) + "-" + RESET);
+        System.out.println(RED + "| BATTLE OF CARDS: MOVIE VILLAINS EDITION|" + RESET);
+        System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
+        System.out.println(RED + "|" + " ".repeat(WIDTH) + "|" + RESET);
             for (String line : lines) {
-                System.out.println(String.format(" | %-26s | ", line));
+                System.out.println(String.format(RED + "| %-38s |" + RESET, line));
         }
-        System.out.println("\n" + "|" + " ".repeat(WIDTH) + "|");
-        System.out.println("\n" + " " + "-".repeat(WIDTH) + "-");
+        System.out.println(RED + "|" + " ".repeat(WIDTH) + "|" + RESET);
+        System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
     }
 
 
