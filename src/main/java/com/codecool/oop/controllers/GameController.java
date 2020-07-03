@@ -3,7 +3,6 @@ package com.codecool.oop.controllers;
 import com.codecool.oop.dao.CSVCardsDAO;
 import com.codecool.oop.dao.CardsDAO;
 import com.codecool.oop.table.*;
-import com.codecool.oop.ui.Input;
 import com.codecool.oop.ui.View;
 
 import java.io.IOException;
