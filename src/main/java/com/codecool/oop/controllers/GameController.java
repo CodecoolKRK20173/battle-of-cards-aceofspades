@@ -8,7 +8,6 @@ import com.codecool.oop.ui.View;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -17,7 +16,6 @@ public class GameController {
 
     Scanner scan = new Scanner(System.in);
     View view = new View();
-    Input playerInput = new Input();
     Random random = new Random();
 
     public void run() throws IOException, URISyntaxException {
@@ -34,44 +32,39 @@ public class GameController {
         RealPlayer winningPlayer;
 
         while (!table.checkForWinner()) {
-            System.out.println(startingPlayer.getName() + ", press enter to start new round");
+            view.clearScreen();
+            view.print(startingPlayer.getName() + ", press enter to start new round");
             scan.nextLine();
-            System.out.print("Your card is: ");
+            view.print("Your card is: ");
             Card drawnCard = startingPlayer.drawNextCard();
-            System.out.println(drawnCard);
+            view.print(drawnCard);
             table.getShowdown().add(drawnCard);
             table.takeCardsFromOtherPlayers(startingPlayer);
             Category category = startingPlayer.chooseCategory();
             table.setCategoryForPool(category);
             Card winningCard = table.compareCards();
             if (table.checkForTie(winningCard)) {
-                System.out.print("We have a draw! ");
-                System.out.printf("%s has same %s score as %s. ", winningCard.getName(),
-                                                                  category.toString().toLowerCase(),
-                                                                  table.getCardsThatTie(winningCard));
-                System.out.println("Cards stay on the table.");
+                view.displayDrawScreen(winningCard, category, table);
                 table.getPot().addAll(table.getShowdown());
                 table.getShowdown().clear();
                 view.printStatistics(players, table.getPot(), roundNumber);
+                roundNumber++;
             } else {
                 winningPlayer = table.getPlayerByName(winningCard.getPlayerOwner());
-                System.out.printf("%s wins the round. ", winningPlayer.getName());
-                System.out.printf("%s beats %s in %s.\n", winningCard.getName(),
-                                                          table.getOtherCardsNames(winningCard),
-                                                          category.toString().toLowerCase());
                 winningPlayer.putCardsAtTheBottom(table.getShowdown());
                 winningPlayer.putCardsAtTheBottom(table.getPot());
-                table.setNewPlayerOwner(winningPlayer.getName());
-                startingPlayer = winningPlayer;
-                table.getShowdown().clear();
-                table.getPot().clear();
-                view.printStatistics(players, table.getPot(), roundNumber);
-                roundNumber++;
+                if (table.checkForWinner()) {
+                    view.displayWinScreen(startingPlayer);
+                } else {
+                    view.displayEndOfRoundScreen(winningPlayer, winningCard, table, category);
+                    table.setNewPlayerOwner(winningPlayer.getName());
+                    startingPlayer = winningPlayer;
+                    table.getShowdown().clear();
+                    table.getPot().clear();
+                    view.printStatistics(players, table.getPot(), roundNumber);
+                    roundNumber++;
+                }
             }
         }
-
-        System.out.println(startingPlayer.getName() + " wins the game");
-        System.out.println("Press enter to go back to main menu");
-        scan.nextLine();
     }
 }
