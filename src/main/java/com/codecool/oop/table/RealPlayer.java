@@ -2,7 +2,6 @@ package com.codecool.oop.table;
 
 import com.codecool.oop.ui.Input;
 
-import java.util.Scanner;
 
 public class RealPlayer extends Player {
 
