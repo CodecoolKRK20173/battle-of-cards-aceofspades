@@ -7,7 +7,6 @@ public abstract class AbstractView {
 
     public abstract void print(Card card);
 
-    public abstract void print(Card card1, Card card2);
 
 
 }

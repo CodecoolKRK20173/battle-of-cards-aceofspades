@@ -19,7 +19,6 @@ public class MenuController {
 
         while (gameOn) {
             view.printMenu();
-
             int userInput = getUserInput();
 
             if (userInput == 1) {
@@ -31,7 +30,7 @@ public class MenuController {
             } else if (userInput == 3) {
                 gameOn = false;
             } else if (userInput == 0) {
-                // runTestGame();
+                //runTestGame();
             }
         }
     }
@@ -39,7 +38,7 @@ public class MenuController {
     static int getUserInput() {
 
         while (!scan.hasNextInt()) {
-            System.out.println("Wrong input format");
+            view.printInfo("Wrong input format");
             scan.next();
         }
         int input = scan.nextInt();

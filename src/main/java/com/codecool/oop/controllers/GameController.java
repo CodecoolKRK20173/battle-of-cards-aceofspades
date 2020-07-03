@@ -35,7 +35,7 @@ public class GameController {
 
         while (!table.checkForWinner()) {
 
-            view.print(startingPlayer.getName() + ", press enter to start new round");
+            view.printInfo(startingPlayer.getName() + ", press enter to start new round");
             scan.nextLine();
             view.clearScreen();
             view.print("Your card is: ");
