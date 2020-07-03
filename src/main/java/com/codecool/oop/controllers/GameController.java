@@ -20,6 +20,7 @@ public class GameController {
 
     public void run() throws IOException, URISyntaxException {
         List<RealPlayer> players = new Setup().getPlayers();
+        view.clearScreen();
         CardsDAO<Card> cardsDAO = new CSVCardsDAO();
         Dealer dealer = new Dealer(cardsDAO.getAll());
         Table table = new Table(players, dealer);
@@ -32,9 +33,10 @@ public class GameController {
         RealPlayer winningPlayer;
 
         while (!table.checkForWinner()) {
-            view.clearScreen();
+
             view.print(startingPlayer.getName() + ", press enter to start new round");
             scan.nextLine();
+            view.clearScreen();
             view.print("Your card is: ");
             Card drawnCard = startingPlayer.drawNextCard();
             view.print(drawnCard);

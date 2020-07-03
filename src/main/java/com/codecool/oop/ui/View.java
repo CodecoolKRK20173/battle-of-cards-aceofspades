@@ -23,7 +23,7 @@ public class View extends AbstractView {
 
     @Override
     public void print(String info) {
-        System.out.println("\n" + info);
+        System.out.println(info);
     }
 
     @Override
