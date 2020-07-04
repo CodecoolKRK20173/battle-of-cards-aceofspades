@@ -41,7 +41,7 @@ public class GameController {
             view.clearScreen();
             view.print("Your card is: ");
             Card drawnCard = startingPlayer.drawNextCard();
-            System.out.println(drawnCard);
+            view.print(drawnCard);
             table.getShowdown().add(drawnCard);
             table.takeCardsFromOtherPlayers(startingPlayer);
             Category category = startingPlayer.chooseCategory();
