@@ -26,7 +26,6 @@ public class Input {
 
     private String getStringInput(String info) {
         view.print(info);
-        view.emptySpace();
         Scanner scannerFromUser = new Scanner(System.in);
 
         return scannerFromUser.nextLine();

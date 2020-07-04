@@ -19,7 +19,7 @@ public class Setup {
         int numberOfPlayers = input.getNumberOfPlayers();
         for (int i = 0; i < numberOfPlayers; i++) {
             view.clearScreen();
-            view.printMessage(View.GREEN + "Player %d, enter your name: " + View.RESET, (i + 1));
+            view.printMessage(View.BLUE + "Player %d, enter your name: " + View.RESET, (i + 1));
             String name = scan.nextLine();
             players.add(new RealPlayer(name));
         }

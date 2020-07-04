@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class View extends AbstractView {
 
     public static final String RESET = "\u001B[0m";
-    public static final String BLACK = "\u001B[30m";
     public static final String RED = "\u001B[31m";
     public static final String GREEN = "\u001B[32m";
     public static final String YELLOW = "\u001B[33m";
@@ -30,13 +29,9 @@ public class View extends AbstractView {
     }
 
     public void keyPressed(String text) {
-        System.out.println(GREEN + text + RESET);
+        System.out.println(BLUE + text + RESET);
         Scanner scannerFromUser = new Scanner(System.in);
         String input = scannerFromUser.nextLine();
-    }
-
-    public void emptySpace() {
-        System.out.print(" ");
     }
 
     public void pause(int seconds) {
@@ -57,27 +52,26 @@ public class View extends AbstractView {
 
     public void printMenu() {
         String[] options = {" New game", " Help", " Exit"};
-        System.out.println(RED + "------------------" + RESET);
-        System.out.println(RED + "    MAIN MENU" + RESET);
-        System.out.println(RED + "------------------" + RESET);
+        System.out.println(RED + " ------------------" + RESET);
+        System.out.println(RED + "|     MAIN MENU    |" + RESET);
+        System.out.println(RED + " ------------------" + RESET);
         for(int index = 0; index < options.length; index++){
-            System.out.println(GREEN + "   " + (index + 1) + ". " + options[index] + RESET);
+            System.out.println(RED + "   " + (index + 1) + ". " + RESET + BLUE + options[index] + RESET + "\n");
         }
-        System.out.println(RED + "------------------" + RESET);
-        System.out.print(GREEN + "Choose one of the options: \n" + RESET);
+        System.out.print(BLUE + "Choose one of the options: \n" + RESET);
     }
 
     public void printRules() {
-        System.out.println(BLUE + "\n| BATTLE OF CARDS: MOVIE VILLAINS EDITION |\n" + RESET);
+        System.out.println(BLUE + "| BATTLE OF CARDS: MOVIE VILLAINS EDITION |\n" + RESET);
     }
 
     public void printInfo(String message){
-        System.out.println(RED + "\n" + message + "\n" + RESET);
+        System.out.println(BLUE + message + RESET);
     }
 
     @Override
     public void print(String info) {
-        System.out.println(GREEN + "\n" + info + "\n" + RESET);
+        System.out.println(BLUE + info + RESET);
     }
 
     @Override
@@ -89,7 +83,7 @@ public class View extends AbstractView {
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
         System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
             for (String line : lines) {
-                System.out.println(String.format(RED + "| " + RESET + GREEN + "%-48s" + RESET + RED + "  |" + RESET, line));
+                System.out.println(String.format(RED + "| " + RESET + BLUE + "%-48s" + RESET + RED + "  |" + RESET, line));
         }
         System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
