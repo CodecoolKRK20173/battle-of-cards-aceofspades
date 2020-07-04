@@ -1,48 +1,47 @@
 name,movie,attire,weapons,intelligence,kills
 Hannibal Lecter,Silence of the Lambs,6,5,10,28
-Freddy Krueger,A Nightmare on Elm Street,9,7,9,35
+Freddy Krueger,A Nightmare on Elm Street,9,7,5,35
 Jason Vorhees,Friday the 13th,8,7,1,161
-Darth Vader,Star Wars,10,7,9,1944
+Darth Vader,Star Wars,10,8,9,1944
 Joker,The Dark Knight,10,6,9,1028
 Terminator,The Terminator,8,8,5,21
 Hans Gruber,Die Hard,7,4,9,5
 Norman Bates,Psycho,5,2,8,11
-Anton Chigurh,No Country for Old Men,6,9,9,16
+Anton Chigurh,No Country for Old Men,6,7,9,16
 Michael Myers,Halloween,8,2,1,121
-Bill,Kill Bill,6,9,10,0
 Jack Torrance,The Shining,3,5,7,1
 T-1000,Terminator 2,7,9,6,7
 John Doe,Se7en,2,3,8,6
 Michael Corleone,The Godfather,6,3,8,20
 Travis Bickle,Taxi Driver,4,5,5,3
-Amon Göth,Schindler's List,3,7,6,90
+Amon Göth,Schindler's List,6,3,7,90
 The Alien,Alien,8,7,3,47
-Gordon Gekko,Wall Street,7,3,6,0
-Clyde Barrow,Bonnie&Clyde,5,3,6,13
-Bonnie Parker,Bonnie&Clyde,5,3,6,13
-Norman Stansfield,Leon: The Proffesional,6,3,7,6
-Tommy DeVito,Goodfellas,4,4,6,137
-Lord Voldemort,Harry Potter,10,8,10,37
-Hector Barbossa,Pirates of the Caribbean,6,1,5,50
-Frank Costello,The Departed,5,8,8,1000
-Calvin Candie,Django Unchained,4,2,5,3
-Vito Corleone,The Godfather,10,5,10,4
+Gordon Gekko,Wall Street,7,0,8,0
+Clyde Barrow,Bonnie&Clyde,5,5,6,13
+Bonnie Parker,Bonnie&Clyde,5,5,6,13
+Norman Stansfield,Leon: The Professional,6,7,6,47
+Tommy DeVito,Goodfellas,6,4,6,13
+Lord Voldemort,Harry Potter,8,5,8,37
+Hector Barbossa,Pirates of the Caribbean,6,3,6,50
+Frank Costello,The Departed,5,4,8,12
+Calvin Candie,Django Unchained,7,4,9,6
+Vito Corleone,The Godfather,8,5,10,45
 Vincent Vega,Pulp Fiction,8,5,8,5
-Tyler Durden,Fight Club,1,4,7,1
-Agent Smith,The Matrix,5,6,8,15
-Chucky,Child's Play,10,5,7,10
-Amy Dunne,Gone Girl,2,1,8,0
-Colonel Hans Landa,Inglourious Basterds,5,7,4,100
-Keyser Söze,The Usual Suspects,3,5,8,27
+Tyler Durden,Fight Club,7,4,10,0
+Agent Smith,The Matrix,6,6,8,15
+Chucky,Child's Play,7,1,5,10
+Amy Dunne,Gone Girl,3,0,8,0
+Colonel Hans Landa,Inglourious Basterds,6,6,9,100
+Keyser Söze,The Usual Suspects,2,1,8,0
 Max Cady,Cape Fear,4,4,6,1
 Nurse Ratched,One Flew Over the Cuckoo's Nest,1,0,7,0
-Alonzo Harris,Training Day,7,4,8,10
-Commodus,Gladiator,8,1,5,1
-Bellatrix Lestrange,Harry Potter,7,9,6,100
-Davy Jones,Pirates of the Caribbean,10,2,6,2
-Jigsaw,Saw,7,10,10,81
-Walter White,Breaking Bad,7,6,9,199
+Alonzo Harris,Training Day,6,5,8,10
+Commodus,Gladiator,7,2,7,35
+Bellatrix Lestrange,Harry Potter,7,1,7,2
+Davy Jones,Pirates of the Caribbean,7,2,6,2
+Jigsaw,Saw,4,6,9,81
+Walter White,Breaking Bad,5,3,9,2
 Franz Maurer,Pigs,4,3,3,16
-Alex,Reich,5,3,8,100
+Alex,Reich,5,3,7,2
 Zdzisław Marchwicki,I'm a Killer,2,1,3,14
 płk. Marian Bońka,Secret Wars,4,5,7,5

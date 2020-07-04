@@ -103,4 +103,21 @@ public class Table {
         }
         return sb.toString().replaceAll(", $", "");
     }
+
+    public boolean playersLeftWithNoCards(String playerName) {
+        int numberOfPlayers = players.size();
+        int counter = 0;
+        for (RealPlayer player : players) {
+            if (!player.getName().equals(playerName) && player.getCards().isEmpty()) {
+                counter++;
+            }
+        }
+        return counter == numberOfPlayers - 1;
+
+    }
+
+    public void clearTable() {
+        showdown.clear();
+        pot.clear();
+    }
 }

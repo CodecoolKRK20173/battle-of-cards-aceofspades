@@ -39,7 +39,7 @@ public class GameController {
             view.clearScreen();
             scan.nextLine();
             view.clearScreen();
-            view.print("Your card is: ");
+            view.print(startingPlayer.getName() +  ", your card is: ");
             Card drawnCard = startingPlayer.drawNextCard();
             view.print(drawnCard);
             table.getShowdown().add(drawnCard);
@@ -57,22 +57,19 @@ public class GameController {
                 winningPlayer = table.getPlayerByName(winningCard.getPlayerOwner());
                 winningPlayer.putCardsAtTheBottom(table.getShowdown());
                 winningPlayer.putCardsAtTheBottom(table.getPot());
-                if (table.checkForWinner()) {
-                    view.displayWinScreen(startingPlayer);
-                } else {
-                    view.displayEndOfRoundScreen(winningPlayer, winningCard, table, category);
-                    table.setNewPlayerOwner(winningPlayer.getName());
-                    startingPlayer = winningPlayer;
-                    table.getShowdown().clear();
-                    table.getPot().clear();
-                    view.printStatistics(players, table.getPot(), roundNumber);
-                    roundNumber++;
-                }
+                view.displayEndOfRoundScreen(winningPlayer, winningCard, table, category);
+                table.setNewPlayerOwner(winningPlayer.getName());
+                startingPlayer = winningPlayer;
+                table.clearTable();
+            }
+            view.printStatistics(players, table.getPot(), roundNumber);
+            roundNumber++;
+
+            if (table.checkForWinner() || table.playersLeftWithNoCards(winningCard.getPlayerOwner())) {
+                view.displayWinScreen(startingPlayer);
             }
         }
-
-        System.out.println(startingPlayer.getName() + " wins the game");
-        System.out.println("Press enter to go back to main menu");
-        scan.nextLine();
     }
 }
+
+
