@@ -20,7 +20,7 @@ public class View extends AbstractView {
     public static final String CYAN = "\u001B[36m";
     public static final String WHITE = "\u001B[37m";
 
-    private final int WIDTH = 40;
+    private final int WIDTH = 50;
     Scanner scan = new Scanner(System.in);
 
 
@@ -84,11 +84,11 @@ public class View extends AbstractView {
     public void print(Card card) {
         String[] lines = card.toString().split("\n");
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
-        System.out.println(RED + "| BATTLE OF CARDS: MOVIE VILLAINS EDITION |" + RESET);
+        System.out.println(RED + "|      BATTLE OF CARDS: MOVIE VILLAINS EDITION      |" + RESET);
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
         System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
             for (String line : lines) {
-                System.out.println(String.format(RED + "| " + RESET + GREEN + "%-38s" + RESET + RED + "  |" + RESET, line));
+                System.out.println(String.format(RED + "| " + RESET + GREEN + "%-48s" + RESET + RED + "  |" + RESET, line));
         }
         System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
