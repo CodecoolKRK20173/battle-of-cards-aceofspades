@@ -102,7 +102,9 @@ public class View extends AbstractView {
             System.out.printf(GREEN + "%s: %d cards\n" + RESET, player.getName(), player.getCards().size());
         }
         System.out.printf(GREEN + "Pot: %d cards\n" + RESET, pot.size());
+
     }
+
 
     public void printMessage(String message, int var) {
         System.out.printf(message, var);

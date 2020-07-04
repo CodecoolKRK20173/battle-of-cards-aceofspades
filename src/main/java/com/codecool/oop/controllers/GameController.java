@@ -36,11 +36,12 @@ public class GameController {
         while (!table.checkForWinner()) {
 
             view.printInfo(startingPlayer.getName() + ", press enter to start new round");
+
             scan.nextLine();
             view.clearScreen();
             view.print("Your card is: ");
             Card drawnCard = startingPlayer.drawNextCard();
-            view.print(drawnCard);
+            System.out.println(drawnCard);
             table.getShowdown().add(drawnCard);
             table.takeCardsFromOtherPlayers(startingPlayer);
             Category category = startingPlayer.chooseCategory();

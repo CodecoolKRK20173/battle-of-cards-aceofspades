@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Dealer extends Player {
 
-    int deckSize;
+    private final int deckSize;
 
     public Dealer(LinkedList<Card> cards) {
         super(cards);
