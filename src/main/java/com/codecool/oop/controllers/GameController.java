@@ -34,12 +34,11 @@ public class GameController {
         RealPlayer winningPlayer;
 
         while (!table.checkForWinner()) {
-
             view.printInfo(startingPlayer.getName() + ", press enter to start new round");
-
             scan.nextLine();
             view.clearScreen();
             view.print("Your card is: ");
+
             Card drawnCard = startingPlayer.drawNextCard();
             view.print(drawnCard);
             table.getShowdown().add(drawnCard);
@@ -47,7 +46,7 @@ public class GameController {
             Category category = startingPlayer.chooseCategory();
             table.setCategoryForPool(category);
             Card winningCard = table.compareCards();
-            if (table.checkForTie(winningCard)) {
+            if (table.checkForTie(winningCard) && !table.playersLeftWithNoCards(winningCard.getPlayerOwner())) {
                 view.displayDrawScreen(winningCard, category, table);
                 table.getPot().addAll(table.getShowdown());
                 table.getShowdown().clear();
@@ -58,7 +57,7 @@ public class GameController {
                 winningPlayer.putCardsAtTheBottom(table.getShowdown());
                 winningPlayer.putCardsAtTheBottom(table.getPot());
                 if (table.checkForWinner()) {
-                    view.displayWinScreen(startingPlayer);
+                    view.displayWinScreen(winningPlayer, winningCard, table, category);
                 } else {
                     view.displayEndOfRoundScreen(winningPlayer, winningCard, table, category);
                     table.setNewPlayerOwner(winningPlayer.getName());
@@ -70,9 +69,5 @@ public class GameController {
                 }
             }
         }
-
-        System.out.println(startingPlayer.getName() + " wins the game");
-        System.out.println("Press enter to go back to main menu");
-        scan.nextLine();
     }
 }

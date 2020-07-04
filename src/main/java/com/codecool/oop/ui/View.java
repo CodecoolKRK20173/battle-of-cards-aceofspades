@@ -83,7 +83,6 @@ public class View extends AbstractView {
     @Override
     public void print(Card card) {
         String[] lines = card.toString().split("\n");
-
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
         System.out.println(RED + "| BATTLE OF CARDS: MOVIE VILLAINS EDITION |" + RESET);
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
@@ -123,8 +122,10 @@ public class View extends AbstractView {
                                                                   category.toString().toLowerCase());
     }
 
-    public void displayWinScreen(RealPlayer player) {
-        System.out.printf(RED + "%s wins the game!\n" + RESET, player.getName());
+    public void displayWinScreen(RealPlayer player, Card card, Table table, Category category) {
+        System.out.printf(GREEN + "%s wins the game!\n" + RESET, player.getName());
+        System.out.printf(GREEN + "%s beats %s in %s.\n" + RESET, card.getName(), table.getOtherCardsNames(card),
+                                                                                  category.toString().toLowerCase());
         System.out.println(RED + "Press enter to go back to main menu" + RESET);
         scan.nextLine();
     }
