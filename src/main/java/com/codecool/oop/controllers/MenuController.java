@@ -29,8 +29,6 @@ public class MenuController {
                 view.printRules();
             } else if (userInput == 3) {
                 gameOn = false;
-            } else if (userInput == 0) {
-                //runTestGame();
             }
         }
     }

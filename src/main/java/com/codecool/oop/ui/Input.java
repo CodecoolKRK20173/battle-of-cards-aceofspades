@@ -47,6 +47,6 @@ public class Input {
     }
 
     public int getNumberOfPlayers() {
-        return getIntegerInput("Enter number of players (min = 1, max = 4)");
+        return getIntegerInput("Enter number of players (min = 2, max = 4): ");
     }
 }

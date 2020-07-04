@@ -19,6 +19,7 @@ public class View extends AbstractView {
     public static final String PURPLE = "\u001B[35m";
     public static final String CYAN = "\u001B[36m";
     public static final String WHITE = "\u001B[37m";
+    public static final String ITALIC = "\u001B[3m";
 
     private final int WIDTH = 50;
     Scanner scan = new Scanner(System.in);
@@ -48,6 +49,7 @@ public class View extends AbstractView {
     }
 
     public void printStart() {
+        clearScreen();
         System.out.println(RED + "Welcome in BATTLE OF CARDS \n  MOVIE VILLAINS EDITION\n" + RESET);
         pause(2);
         System.out.println(RED + "      powered by \n Codecool: Ace of spades\n" + RESET);
@@ -64,7 +66,7 @@ public class View extends AbstractView {
             System.out.println(GREEN + "   " + (index + 1) + ". " + options[index] + RESET);
         }
         System.out.println(RED + "------------------" + RESET);
-        System.out.print(GREEN + "Choose one of the options: \n" + RESET);
+        System.out.println(GREEN + "Choose one of the options: \n" + RESET);
     }
 
     public void printRules() {
@@ -72,7 +74,7 @@ public class View extends AbstractView {
     }
 
     public void printInfo(String message){
-        System.out.println(RED + "\n" + message + "\n" + RESET);
+        System.out.println(GREEN + "\n" + message + "\n" + RESET);
     }
 
     @Override
@@ -88,7 +90,7 @@ public class View extends AbstractView {
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
         System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
             for (String line : lines) {
-                System.out.println(String.format(RED + "| " + RESET + GREEN + "%-48s" + RESET + RED + "  |" + RESET, line));
+                System.out.println(String.format(RED + "| " + RESET + BLUE + "%-48s" + RESET + RED + "  |" + RESET, line));
         }
         System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
@@ -96,11 +98,12 @@ public class View extends AbstractView {
 
 
     public void printStatistics(List<RealPlayer> players, List<Card> pot, int roundNumber) {
-        System.out.printf(GREEN + "Game status after round %d:\n" + RESET, roundNumber);
+        System.out.println();
+        System.out.printf(YELLOW + "\nGame status after round %d:\n" + RESET, roundNumber);
         for (RealPlayer player : players) {
-            System.out.printf(GREEN + "%s: %d cards\n" + RESET, player.getName(), player.getCards().size());
+            System.out.printf(YELLOW + "%s: %d cards\n" + RESET, player.getName(), player.getCards().size());
         }
-        System.out.printf(GREEN + "Pot: %d cards\n" + RESET, pot.size());
+        System.out.printf(YELLOW + "Pot: %d cards\n" + RESET, pot.size());
 
     }
 
@@ -110,23 +113,21 @@ public class View extends AbstractView {
     }
 
     public void displayDrawScreen(Card card, Category category, Table table) {
-        System.out.printf(GREEN + "Draw! %s has same %s score as %s. " + RESET, card.getName(),
+        System.out.printf(GREEN + "Draw! %s has same %s score as %s. \n" + RESET, card.getName(),
                                                                 category.toString().toLowerCase(),
                                                                 table.getCardsThatTie(card));
-        System.out.println(GREEN + "Cards stay on the table." + RESET);
     }
 
     public void displayEndOfRoundScreen(RealPlayer player, Card card, Table table, Category category) {
         System.out.printf(GREEN + "%s wins the round. " + RESET, player.getName());
-        System.out.printf(GREEN + "%s beats %s in %s.\n" + RESET, card.getName(), table.getOtherCardsNames(card),
+        System.out.printf(GREEN + "%s beats %s in %s." + RESET, card.getName(), table.getOtherCardsNames(card),
                                                                   category.toString().toLowerCase());
     }
 
-    public void displayWinScreen(RealPlayer player, Card card, Table table, Category category) {
-        System.out.printf(GREEN + "%s wins the game!\n" + RESET, player.getName());
-        System.out.printf(GREEN + "%s beats %s in %s.\n" + RESET, card.getName(), table.getOtherCardsNames(card),
-                                                                                  category.toString().toLowerCase());
-        System.out.println(RED + "Press enter to go back to main menu" + RESET);
+    public void displayWinScreen(RealPlayer player) {
+        System.out.println();
+        System.out.printf(GREEN + "%s WINS THE GAME!%n" + RESET, player.getName().toUpperCase());
+        System.out.println(RED + "\nPress enter to go back to main menu" + RESET);
         scan.nextLine();
     }
 }

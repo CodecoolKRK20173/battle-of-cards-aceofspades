@@ -115,4 +115,9 @@ public class Table {
         return counter == numberOfPlayers - 1;
 
     }
+
+    public void clearTable() {
+        showdown.clear();
+        pot.clear();
+    }
 }

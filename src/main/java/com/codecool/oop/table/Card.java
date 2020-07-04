@@ -1,5 +1,7 @@
 package com.codecool.oop.table;
 
+import com.codecool.oop.ui.View;
+
 import java.util.Objects;
 
 public class Card implements Comparable<Card> {
@@ -54,7 +56,7 @@ public class Card implements Comparable<Card> {
     @Override
     public String toString() {
         return  "    name: " + name + '\n' + '\n' +
-                "    movie: " + movie + '\n' + '\n' +
+                "    movie: " + View.ITALIC + movie + View.RESET + '\n' + '\n' +
                 "1 | attire: " + attire + '\n' +
                 "2 | weapons: " + weapons + '\n' +
                 "3 | intelligence: " + intelligence + '\n' +
