@@ -50,8 +50,6 @@ public class GameController {
                 view.displayDrawScreen(winningCard, category, table);
                 table.getPot().addAll(table.getShowdown());
                 table.getShowdown().clear();
-                view.printStatistics(players, table.getPot(), roundNumber);
-                roundNumber++;
             } else {
                 winningPlayer = table.getPlayerByName(winningCard.getPlayerOwner());
                 winningPlayer.putCardsAtTheBottom(table.getShowdown());
