@@ -18,6 +18,7 @@ public class MenuController {
         view.clearScreen();
 
         while (gameOn) {
+            view.clearScreen();
             view.printMenu();
             int userInput = getUserInput();
 

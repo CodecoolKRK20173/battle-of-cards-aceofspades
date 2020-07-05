@@ -66,7 +66,15 @@ public class View extends AbstractView {
     }
 
     public void printRules() {
-        System.out.println(BLUE + "| BATTLE OF CARDS: MOVIE VILLAINS EDITION |\n" + RESET);
+        clearScreen();
+        System.out.println(BLUE + "| BATTLE OF CARDS: MOVIE VILLAINS EDITION |\n");
+        System.out.println("Have you ever wondered who would win in the clash: Jason Vorhees from \"Friday the 13th\" vs Freddy Krueger from \"Nightmare on Elm Street\"?");
+        System.out.println("In this game these characters and many others movie villains compete with each other in 4 categories: attire, weapons, intelligence and kills.");
+        System.out.println("Categories \"attire\", \"weapons\" and \"intelligence\" are scored on the scale 1-10.");
+        System.out.println("\"Kills\" category is an estimate of how many victims died at the hands of the given character.");
+        System.out.println("\nENJOY!\n");
+        System.out.println("Press enter to go back to main menu" + RESET);
+        scan.nextLine();
     }
 
     public void printInfo(String message){
