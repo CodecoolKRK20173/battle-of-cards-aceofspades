@@ -28,6 +28,10 @@ public class Card implements Comparable<Card> {
         return name;
     }
 
+    public String getMovie() {
+        return movie;
+    }
+
     public String getPlayerOwner() {return playerOwner;}
 
     public void setCategoryToCompare(Category category) {
@@ -55,9 +59,7 @@ public class Card implements Comparable<Card> {
 
     @Override
     public String toString() {
-        return  "    name: " + name + '\n' + '\n' +
-                "    movie: " + View.ITALIC + movie + View.RESET + '\n' + '\n' +
-                "1 | attire: " + attire + '\n' +
+        return  "1 | attire: " + attire + '\n' +
                 "2 | weapons: " + weapons + '\n' +
                 "3 | intelligence: " + intelligence + '\n' +
                 "4 | kills: " + kills + '\n';
