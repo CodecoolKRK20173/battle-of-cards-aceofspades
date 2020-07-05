@@ -58,9 +58,9 @@ public class Card implements Comparable<Card> {
 
     @Override
     public String toString() {
-        return  "1 | attire: " + attire + '\n' +
-                "2 | weapons: " + weapons + '\n' +
-                "3 | intelligence: " + intelligence + '\n' +
+        return  "1 | attire: " + attire + "/10" + '\n' +
+                "2 | weapons: " + weapons + "/10" + '\n' +
+                "3 | intelligence: " + intelligence + "/10" + '\n' +
                 "4 | kills: " + kills + '\n';
     }
 
