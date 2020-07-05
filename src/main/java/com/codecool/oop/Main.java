@@ -8,8 +8,12 @@ import java.net.URISyntaxException;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException, URISyntaxException{
-        MenuController menuController = new MenuController();
-        menuController.menu();
+    public static void main(String[] args) {
+        try {
+            MenuController menuController = new MenuController();
+            menuController.menu();
+        } catch (IOException | URISyntaxException | NullPointerException e) {
+            System.out.println("Input file was not found");
+        }
     }
 }
