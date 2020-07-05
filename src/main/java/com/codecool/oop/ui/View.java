@@ -4,6 +4,7 @@ import com.codecool.oop.table.Category;
 import com.codecool.oop.table.RealPlayer;
 import com.codecool.oop.table.Table;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
@@ -81,12 +82,36 @@ public class View extends AbstractView {
     public void print(Card card) {
         String[] lines = card.toString().split("\n");
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
-        System.out.println(String.format(RED + "| " + RESET + BLUE + "name:" + "%-43s" + RESET + RED + "  |" + RESET, card.getName()));
-        System.out.println(String.format(RED + "| " + RESET +  BLUE + "movie:" + ITALIC + "%-42s" + RESET + RED + "  |" + RESET, card.getMovie()));
+        System.out.println(String.format(RED + "| " + RESET + BLUE + "name: " + "%-42s" + RESET + RED + "  |" + RESET, card.getName()));
+        System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
+        System.out.println(String.format(RED + "| " + RESET +  BLUE + "movie: " + ITALIC + "%-41s" + RESET + RED + "  |" + RESET, card.getMovie()));
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
         System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
             for (String line : lines) {
                 System.out.println(String.format(RED + "| " + RESET + BLUE + "%-48s" + RESET + RED + "  |" + RESET, line));
+        }
+        System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
+        System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
+    }
+
+    public void print(Card card, Table table, List<Card> showdown) {
+        int i = 0;
+        String[] lines = card.toString().split("\n");
+        System.out.print(RED + "  " + "-".repeat(WIDTH) + "-" + RESET);
+        System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
+        System.out.print(String.format(RED + "| " + RESET + BLUE + "name: " + "%-42s" + RESET + RED + "  |" + RESET, card.getName()));
+        System.out.println(String.format(RED + "  " + RESET + BLUE + "name: " + "%-42s" + RESET + RED + "  |" + RESET, table.getOtherCardsNames(card)));
+        System.out.print(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
+        System.out.println(RED + " " + " ".repeat(WIDTH) + " |" + RESET);
+        System.out.print(String.format(RED + "| " + RESET +  BLUE + "movie: " + ITALIC + "%-41s" + RESET + RED + "  |" + RESET, card.getMovie()));
+        System.out.println(String.format(RED + "  " + RESET +  BLUE + "movie: " + ITALIC + "%-41s" + RESET + RED + "  |" + RESET, table.getOtherCardsMovies(card)));
+        System.out.print(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
+        System.out.println(RED + "  " + "-".repeat(WIDTH) + "-" + RESET);
+        System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
+        for (String line : lines) {
+            System.out.print(String.format(RED + "| " + RESET + BLUE + "%-48s" + RESET + RED + "  |" + RESET, line));
+            System.out.println(String.format(RED + "  " + RESET + BLUE + "%-48s" + RESET + RED + "  |" + RESET, showdown.get(i)));
+            i++;
         }
         System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);

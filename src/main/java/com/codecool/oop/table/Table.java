@@ -94,6 +94,16 @@ public class Table {
         return sb.toString().replaceAll(", $", "");
     }
 
+    public String getOtherCardsMovies(Card winningCard) {
+        StringBuilder sb = new StringBuilder();
+        for (Card card : showdown) {
+            if (card != winningCard) {
+                sb.append(card.getMovie()).append(", ");
+            }
+        }
+        return sb.toString().replaceAll(", $", "");
+    }
+
     public String getCardsThatTie(Card winningCard) {
         StringBuilder sb = new StringBuilder();
         for (Card card : showdown) {
