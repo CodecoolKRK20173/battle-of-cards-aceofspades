@@ -6,9 +6,9 @@ public class Table {
 
     private final List<RealPlayer> players;
     private final Dealer dealer;
-    private final List<Card> showdown;
     private final List<Card> pot;
     private int actualDeckSize;
+    public final List<Card> showdown;
 
     public Table(List<RealPlayer> players, Dealer dealer) {
         this.players = players;

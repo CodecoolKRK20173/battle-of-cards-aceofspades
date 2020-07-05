@@ -59,14 +59,17 @@ public class GameController {
                 view.displayEndOfRoundScreen(winningPlayer, winningCard, table, category);
                 table.setNewPlayerOwner(winningPlayer.getName());
                 startingPlayer = winningPlayer;
+
                 table.clearTable();
             }
             view.printStatistics(players, table.getPot(), roundNumber);
             roundNumber++;
 
             if (table.checkForWinner() || table.playersLeftWithNoCards(winningCard.getPlayerOwner())) {
+                view.emptySpace();
                 view.displayWinScreen(startingPlayer);
             }
+
         }
     }
 }

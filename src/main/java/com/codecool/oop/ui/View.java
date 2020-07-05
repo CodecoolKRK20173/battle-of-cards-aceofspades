@@ -15,8 +15,9 @@ public class View extends AbstractView {
     public static final String YELLOW = "\u001B[33m";
     public static final String BLUE = "\u001B[34m";
     public static final String ITALIC = "\u001B[3m";
+    public static final String GREEN = "\u001B[32m";
 
-    private final int WIDTH = 40;
+    private final int WIDTH = 50;
     Scanner scan = new Scanner(System.in);
 
 
@@ -32,7 +33,7 @@ public class View extends AbstractView {
     }
 
     public void emptySpace() {
-        System.out.print(" ");
+        System.out.print("\n");
     }
 
     public void pause(int seconds) {
@@ -80,12 +81,12 @@ public class View extends AbstractView {
     public void print(Card card) {
         String[] lines = card.toString().split("\n");
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
-        System.out.println(String.format(RED + "| " + RESET + BLUE + "%-38s" + RESET + RED + "  |" + RESET, card.getName()));
-        System.out.println(String.format(RED + "| " + RESET +  BLUE + "%-38s" + RESET + RED + "  |" + RESET, card.getMovie()));
+        System.out.println(String.format(RED + "| " + RESET + BLUE + "name:" + "%-43s" + RESET + RED + "  |" + RESET, card.getName()));
+        System.out.println(String.format(RED + "| " + RESET +  BLUE + "movie:" + ITALIC + "%-42s" + RESET + RED + "  |" + RESET, card.getMovie()));
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
         System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
             for (String line : lines) {
-                System.out.println(String.format(RED + "| " + RESET + BLUE + "%-38s" + RESET + RED + "  |" + RESET, line));
+                System.out.println(String.format(RED + "| " + RESET + BLUE + "%-48s" + RESET + RED + "  |" + RESET, line));
         }
         System.out.println(RED + "|" + " ".repeat(WIDTH) + " |" + RESET);
         System.out.println(RED + " " + "-".repeat(WIDTH) + "-" + RESET);
@@ -113,8 +114,8 @@ public class View extends AbstractView {
     }
 
     public void displayEndOfRoundScreen(RealPlayer player, Card card, Table table, Category category) {
-        System.out.printf(YELLOW + "%s wins the round. " + RESET, player.getName());
-        System.out.printf(YELLOW + "%s beats %s in %s." + RESET, card.getName(), table.getOtherCardsNames(card),
+        System.out.printf(GREEN + "%s wins the round. " + RESET, player.getName());
+        System.out.printf(GREEN + "%s beats %s in %s." + RESET, card.getName(), table.getOtherCardsNames(card),
                                                                   category.toString().toLowerCase());
     }
 
