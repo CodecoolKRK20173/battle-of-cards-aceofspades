@@ -1,6 +1,5 @@
 package com.codecool.oop.table;
 
-import com.codecool.oop.ui.View;
 
 import java.util.Objects;
 
